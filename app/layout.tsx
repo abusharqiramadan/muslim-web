@@ -14,6 +14,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Muslim Web",
+  icons: {
+    icon: "/favicon.ico", // Path to your ICO file in the public folder
+  },
   description: "A program to help Muslim educators build a professional online presence.",
   openGraph: {
     title: "Muslim Web",
