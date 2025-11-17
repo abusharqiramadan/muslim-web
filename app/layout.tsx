@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "Muslim Web",
     images: [
       {
-        url: "/lib/images/website-banner.png", // Path to your banner image in public folder
+        url: "/website-banner.png", // Path to your banner image in public folder
         width: 1200,
         height: 630,
         alt: "Muslim Web Website Banner",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Muslim Web",
     description: "A program to help Muslim educators build a professional online presence.",
-    images: ["/lib/images/website-banner.png"],
+    images: ["/website-banner.png"],
   },
 };
 
