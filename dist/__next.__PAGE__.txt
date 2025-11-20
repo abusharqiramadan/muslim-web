@@ -1,9 +1,9 @@
 1:"$Sreact.fragment"
 2:I[47257,["/muslim-web/_next/static/chunks/ff1a16fafef87110.js","/muslim-web/_next/static/chunks/247eb132b7f7b574.js"],"ClientPageRoot"]
-3:I[31713,["/muslim-web/_next/static/chunks/4f463fffdd3c06f9.js","/muslim-web/_next/static/chunks/d3be87242ff953bf.js","/muslim-web/_next/static/chunks/6264b711a28b7ca9.js"],"default"]
+3:I[31713,["/muslim-web/_next/static/chunks/4f463fffdd3c06f9.js","/muslim-web/_next/static/chunks/d3be87242ff953bf.js","/muslim-web/_next/static/chunks/269eb652c6744afc.js"],"default"]
 6:I[97367,["/muslim-web/_next/static/chunks/ff1a16fafef87110.js","/muslim-web/_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
 7:"$Sreact.suspense"
-0:{"buildId":"l8S9r_hVIconGXWjsNd0d","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","script","script-0",{"src":"/muslim-web/_next/static/chunks/4f463fffdd3c06f9.js","async":true}],["$","script","script-1",{"src":"/muslim-web/_next/static/chunks/d3be87242ff953bf.js","async":true}],["$","script","script-2",{"src":"/muslim-web/_next/static/chunks/6264b711a28b7ca9.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"I2DU6428f5F5MKD7-KJ12","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","script","script-0",{"src":"/muslim-web/_next/static/chunks/4f463fffdd3c06f9.js","async":true}],["$","script","script-1",{"src":"/muslim-web/_next/static/chunks/d3be87242ff953bf.js","async":true}],["$","script","script-2",{"src":"/muslim-web/_next/static/chunks/269eb652c6744afc.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
 4:{}
 5:"$0:rsc:props:children:0:props:serverProvidedParams:params"
 8:null

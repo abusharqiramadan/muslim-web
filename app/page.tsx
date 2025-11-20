@@ -376,12 +376,11 @@ const pricingTiers: PricingTier[] = [
     description:
       "Great for Islamic schools, mosques, and centers launching a first site.",
     features: [
-      { text: "Detailed breakdown to capture what makes you unique" },
-      { text: "Polished 5-page site to show your story and programs" },
-      { text: "Weekly Website Analytics" },
-      { text: "Free 7-day website build + Lifetime Website Support" },
-      { text: "After you get results (with Allah's permission) you can upgrade to Excellence Tier for free" },
-      { text: "NOT included: ongoing design updates, email tools, customized website analytics, priority website support", isNegative: true },
+      { text: "Tell your story simply so visitors see what makes you stand out" },
+      { text: "Launch a clean 5-page site that builds trust in your programs" },
+      { text: "Check weekly analytics to learn how families use your site" },
+      { text: "Enjoy a free 7-day build and lifetime support for peace of mind" },
+      { text: "NOT included: email tools, custom analytics, or priority support", isNegative: true },
     ],
     badge: "For First-Time Launches",
     extra_badge: "(5 Spots Available)",
@@ -421,14 +420,14 @@ const pricingTiers: PricingTier[] = [
     description:
       "A Learning Management Platform built for Online Islamic schooling needs. Create structured curricula with lesson checkpoints, track student progress, and build community—all under your branding.",
     features: [
-      { text: "Try the system and see if it is right for you and your team" },
-      { text: "Your specific program branding" },
-      { text: "Program data stays protected" },
-      { text: "Create & manage custom course modules" },
-      { text: "Lesson barriers requiring instructor checkpoints" },
-      { text: "Student progress tracking & assessments" },
-      { text: "Private community page for engagement" },
-      { text: "Dedicated onboarding & educator support" },
+      { text: "Try the system to see if it fits your team's workflow" },
+      { text: "Show your branding on every page" },
+      { text: "Keep student and family records protected" },
+      { text: "Create custom modules to organize your lessons" },
+      { text: "Add lesson checkpoints so teachers review progress" },
+      { text: "Track student progress with clear assessments" },
+      { text: "Keep families connected with a private community page" },
+      { text: "Use dedicated onboarding and support when you need it" },
       { text: "NOT included: your custom domain", isNegative: true },
     ],
     badge: "For programs ready to expand",
@@ -979,7 +978,7 @@ export default function Home() {
                     initial={reduceMotion ? undefined : "hidden"}
                     animate={reduceMotion ? undefined : "show"}
                     exit={reduceMotion ? undefined : "exit"}
-                    className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-rose-100 bg-white shadow-lg shadow-rose-100 transition-transform duration-300 md:cursor-pointer md:hover:-translate-y-2"
+                    className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-rose-100 bg-white shadow-lg shadow-rose-100 transition-transform duration-300 hover:-translate-y-2 md:cursor-pointer md:hover:-translate-y-2"
                     style={motionStyle}
                   >
                     <div className="relative h-48 w-full overflow-hidden">
