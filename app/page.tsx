@@ -91,6 +91,7 @@ type TrustSignal = {
 type PricingTier = {
   name: string
   price: string
+  anchorPrice?: string
   period: string
   description: string
   features: {
@@ -102,6 +103,7 @@ type PricingTier = {
   badge?: string
   extra_badge?: string;
   countdownTarget?: string
+  priceLabel?: string
   ctaLabel: string
   ctaHref: string
   theme?: "light" | "dark" | "premium"
@@ -371,8 +373,9 @@ const trustSignals: TrustSignal[] = [
 const pricingTiers: PricingTier[] = [
   {
     name: "Community Launch",
-    price: "$0",
-    period: "+ website domain fee (optional)",
+    anchorPrice: "$750",
+    price: "$297",
+    period: "",
     description:
       "Great for Islamic schools, mosques, and centers launching a first site.",
     features: [
@@ -380,10 +383,10 @@ const pricingTiers: PricingTier[] = [
       { text: "Launch a clean 5-page site that builds trust in your programs" },
       { text: "Check weekly analytics to learn how families use your site" },
       { text: "Enjoy a free 7-day build and lifetime support for peace of mind" },
-      { text: "NOT included: email tools, custom analytics, or priority support", isNegative: true },
+      { text: "NOT included: email tools, custom analytics", isNegative: true },
     ],
-    badge: "For First-Time Launches",
-    extra_badge: "(5 Spots Available)",
+    badge: "For Islamic Schools & Mosques",
+    extra_badge: "(5 Spots Left • Limited Time)",
     countdownTarget: "2026-01-01T23:59:59Z",
     ctaLabel: "Apply for Community Launch",
     ctaHref: "/base-plan",
@@ -413,29 +416,29 @@ const pricingTiers: PricingTier[] = [
   //   theme: "dark",
   //   privacyNote: "Sacred trust: family, donation, and counseling info stay protected.",
   // },
-  {
-    name: "Islamic Educator Platform",
-    price: "$0",
-    period: "for one teaching quarter (trial)",
-    description:
-      "A Learning Management Platform built for Online Islamic schooling needs. Create structured curricula with lesson checkpoints, track student progress, and build community—all under your branding.",
-    features: [
-      { text: "Try the system to see if it fits your team's workflow" },
-      { text: "Show your branding on every page" },
-      { text: "Keep student and family records protected" },
-      { text: "Create custom modules to organize your lessons" },
-      { text: "Add lesson checkpoints so teachers review progress" },
-      { text: "Track student progress with clear assessments" },
-      { text: "Keep families connected with a private community page" },
-      { text: "Use dedicated onboarding and support when you need it" },
-      { text: "NOT included: your custom domain", isNegative: true },
-    ],
-    badge: "For programs ready to expand",
-    ctaLabel: "Schedule a demo",
-    ctaHref: "/custom-plan",
-    theme: "premium",
-    privacyNote: "Sacred trust: safe hosting and exclusive access.",
-  },
+  // {
+  //   name: "Islamic Educator Platform",
+  //   price: "$0",
+  //   period: "for one teaching quarter (trial)",
+  //   description:
+  //     "A Learning Management Platform built for Online Islamic schooling needs. Create structured curricula with lesson checkpoints, track student progress, and build community—all under your branding.",
+  //   features: [
+  //     { text: "Try the system to see if it fits your team's workflow" },
+  //     { text: "Show your branding on every page" },
+  //     { text: "Keep student and family records protected" },
+  //     { text: "Create custom modules to organize your lessons" },
+  //     { text: "Add lesson checkpoints so teachers review progress" },
+  //     { text: "Track student progress with clear assessments" },
+  //     { text: "Keep families connected with a private community page" },
+  //     { text: "Use dedicated onboarding and support when you need it" },
+  //     { text: "NOT included: your custom domain", isNegative: true },
+  //   ],
+  //   badge: "For programs ready to expand",
+  //   ctaLabel: "Schedule a demo",
+  //   ctaHref: "/custom-plan",
+  //   theme: "premium",
+  //   privacyNote: "Sacred trust: safe hosting and exclusive access.",
+  // },
 ]
 
 export default function Home() {
@@ -519,7 +522,7 @@ export default function Home() {
                   style={motionStyle}
                 >
                   <Zap className="h-4 w-4" />
-                  Only 5 free spots available
+                  Only 5 spots left for this month
                 </motion.span>
                 <motion.h1
                   layout
@@ -539,7 +542,7 @@ export default function Home() {
                   className="max-w-2xl text-lg font-semibold text-rose-600 sm:text-xl"
                   style={motionStyle}
                 >
-                  Reserve a free website for your school or masjid before the five openings fill up!
+                  Get a website that shows the quality of your effort to serve our community.
                 </motion.p>
                 <motion.p
                   layout
@@ -560,7 +563,7 @@ export default function Home() {
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-rose-500 px-7 py-3 text-base font-semibold text-white shadow-xl shadow-rose-200 transition-all duration-300 hover:-translate-y-1 hover:bg-rose-400 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-rose-200"
                   >
                     <Rocket className="h-4 w-4" />
-                    Get your free build
+                    Talk with our team
                   </Link>
                   <Link
                     href="#problem"
@@ -577,7 +580,7 @@ export default function Home() {
                   style={motionStyle}
                 >
                   <ShieldCheck className="h-4 w-4 text-rose-500" />
-                  <span>7-day launch promise · No payment today</span>
+                  <span>7-day launch promise · Starting at $297 (normally $750)</span>
                 </motion.div>
               </motion.div>
           </motion.div>
@@ -1305,19 +1308,44 @@ export default function Home() {
                       >
                         {tier.name}
                       </div>
-                      <div className="mt-4 flex items-baseline gap-2">
-                        <span
-                          className={`text-4xl font-semibold ${isPremium || isDark ? "text-white" : "text-zinc-900"
-                            }`}
-                        >
-                          {tier.price}
-                        </span>
-                        <span
-                          className={`text-sm ${isPremium || isDark ? "text-slate-300" : "text-zinc-600"
-                            }`}
-                        >
-                          {tier.period}
-                        </span>
+                      <div className="mt-4 flex flex-col items-start gap-2">
+                        {tier.priceLabel ? (
+                          <span
+                            className={`text-xs font-semibold uppercase tracking-wide ${isPremium ? "text-sky-200" : isDark ? "text-emerald-200" : "text-rose-500"}
+                          `}
+                          >
+                            {tier.priceLabel}
+                          </span>
+                        ) : null}
+                        <div className="flex flex-wrap items-baseline gap-2">
+                          {tier.anchorPrice ? (
+                            <span
+                              className={`text-sm font-semibold line-through ${isPremium ? "text-slate-200/70" : isDark ? "text-slate-300/70" : "text-zinc-400"}`}
+                            >
+                              {tier.anchorPrice}
+                            </span>
+                          ) : null}
+                          {tier.anchorPrice ? (
+                            <span
+                              aria-hidden="true"
+                              className={`text-sm font-semibold ${isPremium || isDark ? "text-rose-200" : "text-rose-500"}`}
+                            >
+                              →
+                            </span>
+                          ) : null}
+                          <span
+                            className={`text-4xl font-semibold sm:text-5xl ${isPremium || isDark ? "text-white" : "text-zinc-900"}
+                          `}
+                          >
+                            {tier.price}
+                          </span>
+                          <span
+                            className={`text-sm ${isPremium || isDark ? "text-slate-300" : "text-zinc-600"}
+                          `}
+                          >
+                            {tier.period}
+                          </span>
+                        </div>
                       </div>
                       <p
                         className={`mt-4 text-sm font-medium ${isDark || isPremium ? "text-slate-200" : "text-zinc-600"
@@ -1330,7 +1358,7 @@ export default function Home() {
                           className={`mt-2 text-xs font-semibold uppercase tracking-wide ${isPremium ? "text-sky-200" : isDark ? "text-rose-200" : "text-rose-500"
                             }`}
                         >
-                          {daysRemaining > 0 ? `${daysRemaining} days left · Ends Jan 1, 2026` : "Offer ends Jan 1, 2026"}
+                          {daysRemaining > 0 ? `${daysRemaining} days left for limited time offer · Ends Jan 1, 2026` : "Offer ends Jan 1, 2026"}
                         </p>
                       ) : null}
                       <motion.ul

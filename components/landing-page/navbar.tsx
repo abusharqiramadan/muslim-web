@@ -82,14 +82,6 @@ export function NavBar() {
               </li>
             ))}
           </ul>
-          <Link
-            href="#pricing"
-            className="inline-flex items-center gap-2 rounded-full bg-rose-500 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-rose-200 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-rose-400 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-rose-200"
-            onClick={(event) => handleNavClick(event, "#pricing")}
-          >
-            <Rocket className="h-4 w-4" />
-            Book a quota
-          </Link>
         </div>
 
         <button
